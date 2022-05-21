@@ -1,0 +1,15 @@
+#hoadon,#cthd{
+   overflow: auto;
+   height: 400px; 
+}
+#error_mes{
+   color: red;
+}
+.center_text{
+   text-align: center;
+}
+.result_section{
+   border: 3px dotted darkblue;
+   padding: 20px;
+   margin-top: 25px;
+}
