@@ -27,9 +27,10 @@ def result():
 
         df_hoadon = pd.read_excel(path1, index_col=False)
         df_cthd = pd.read_excel(path2, index_col=False)
-
+        df_result = find_product(path1,path2,start_date, end_date)
+        df_result["Thành tiền"] = df_result["Số lượng"]*df_result["Đơn giá"]
         return render_template('result.html', 
-            product_info = find_product(path1,path2,start_date, end_date),
+            product_info = df_result.to_html(index=False,classes="table table-dark"),
             hoadon = df_hoadon.to_html(index=False,classes="table table-dark"),
             cthd = df_cthd.to_html(index=False,classes="table table-dark")
         ) 
